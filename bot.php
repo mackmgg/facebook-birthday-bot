@@ -5,7 +5,7 @@
 	$dbuser = '';                                               // MySQL username
 	$dbpass = '';                                               // MySQL password
 	$timedelay = 10;                                            // Delay between checks (in seconds)
-	$message = 'Thanks!';                                       // Message to reply to people
+	$messages = array('Thanks!', 'Thank you!')                  // Message to reply to people
 	$regex = '/(b(irth|-)(day)?)|((h)?bd)|(b(irth|-)?day)/i';   // Regex to determine birthday messages
 	
 	for(;;) {
@@ -24,7 +24,8 @@
 	          $curlurl = "https://graph.facebook.com/".$datas->id."/comments\n";
 	          $attachment = array(
 	            'access_token' => $access_token,
-	            'message'      => $message);
+	            'message'      => $messages[rand(0,count($messages)-1)]
+            );
 	          $ch = curl_init();
 	          curl_setopt($ch, CURLOPT_URL, $curlurl);
 	          curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
