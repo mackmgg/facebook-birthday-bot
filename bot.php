@@ -1,5 +1,5 @@
 <?php
-	$access_token = '';                                         // Generate at http://ovh.mack.im/fb.php 
+	$access_token = '';                                         // Facebook API Access Token
 	$username = '';                                             // Facebook username (or ID number)
 	$database = '';                                             // MySQL database for storing replies
 	$dbuser = '';                                               // MySQL username
